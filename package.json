@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun run --watch src/index.ts",  
+	"lint": "npx @biomejs/biome check src",
+    "lint:fix": "npm run lint --fix"
+  },
+  "dependencies": {
+    "gramio": "^0.2.0",
+    "env-var": "^7.5.0",
+    "elysia": "^1.1.26"
+  },
+  "devDependencies": {
+	"bun-types": "latest",
+    "typescript": "^5.7.2",
+    "@biomejs/biome": "^1.9.4"
+  }
+}

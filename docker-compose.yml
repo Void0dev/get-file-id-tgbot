@@ -1,0 +1,25 @@
+services:
+    bot:
+        container_name: void0-bot
+        restart: unless-stopped
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+        - NODE_ENV=production
+    postgres:
+            container_name: void0-postgres
+            image: postgres:latest
+            restart: unless-stopped
+            environment:
+                - POSTGRES_USER=void0
+                - POSTGRES_PASSWORD=Please-change-password
+                - POSTGRES_DB=void0
+            volumes:
+                - postgres_data:/var/lib/postgresql/data
+    
+volumes:
+    postgres_data:
+    
+networks:
+    default: {}
