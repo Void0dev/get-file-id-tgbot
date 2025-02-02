@@ -22,9 +22,5 @@ process.on("unhandledRejection", (error) => {
 
 app.listen(config.PORT, () => console.log(`Listening on port ${config.PORT}`));
 if (config.NODE_ENV === "production") {
-  await bot.start({
-    webhook: {
-      url: `${config.API_URL}/${config.BOT_TOKEN}`,
-    },
-  });
+  await bot.start();
 } else await bot.start();
